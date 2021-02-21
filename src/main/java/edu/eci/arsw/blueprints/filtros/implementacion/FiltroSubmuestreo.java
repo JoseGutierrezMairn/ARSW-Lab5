@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
 import edu.eci.arsw.blueprints.model.Blueprint;
 import edu.eci.arsw.blueprints.model.Point;
 
-@Service
-@Qualifier("Muestreo")
+//@Qualifier("Muestreo")
+@Service("Muestreo")
 public class FiltroSubmuestreo implements Filtro{
 
 	@Override

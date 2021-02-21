@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 import edu.eci.arsw.blueprints.model.Blueprint;
 import edu.eci.arsw.blueprints.model.Point;
 
-@Service
-@Qualifier("Redundancia")
+//@Qualifier("Redundancia")
+@Service("Redundancia")
 public class FiltroRedundancia implements Filtro {
 
 	@Override

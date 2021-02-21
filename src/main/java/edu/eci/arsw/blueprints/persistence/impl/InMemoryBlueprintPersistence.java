@@ -20,19 +20,25 @@ import org.springframework.stereotype.Service;
  *
  * @author hcadavid
  */
-@Service
-@Qualifier("InMemoryBlueprintPersistence")
+@Service("InMemoryBlueprintPersistence")
 public class InMemoryBlueprintPersistence implements BlueprintsPersistence{
 
     private final Map<Tuple<String,String>,Blueprint> blueprints=new HashMap<>();
 
-    //public InMemoryBlueprintPersistence() {
+    public InMemoryBlueprintPersistence() {
         //load stub data
-        //Point[] pts=new Point[]{new Point(140, 140),new Point(115, 115)};
-        //Blueprint bp=new Blueprint("_authorname_", "_bpname_ ",pts);
-        //blueprints.put(new Tuple<>(bp.getAuthor(),bp.getName()), bp);
+        Point[] pts=new Point[]{new Point(140, 140),new Point(115, 115)};
+        Blueprint bp=new Blueprint("jose", "plano1",pts);
+        blueprints.put(new Tuple<>(bp.getAuthor(),bp.getName()), bp);
         
-    //}    
+        pts=new Point[]{new Point(200, 200),new Point(150, 150)};
+        bp=new Blueprint("jose", "plano2",pts);
+        blueprints.put(new Tuple<>(bp.getAuthor(),bp.getName()), bp);
+        
+        pts=new Point[]{new Point(100, 100)};
+        bp=new Blueprint("daniel", "plano3",pts);
+        blueprints.put(new Tuple<>(bp.getAuthor(),bp.getName()), bp);
+    }    
 
     @Override
     public void saveBlueprint(Blueprint bp) throws BlueprintPersistenceException {
@@ -49,7 +55,7 @@ public class InMemoryBlueprintPersistence implements BlueprintsPersistence{
     public Blueprint getBlueprint(String author, String bprintname) throws BlueprintNotFoundException {
     	Blueprint bp = blueprints.get(new Tuple<>(author, bprintname));
     	if(bp == null) {
-    		throw new BlueprintNotFoundException("Blueprint or author has not been found");
+    		throw new BlueprintNotFoundException("Blueprint or author have not been found");
     	}
         return bp;
     }
