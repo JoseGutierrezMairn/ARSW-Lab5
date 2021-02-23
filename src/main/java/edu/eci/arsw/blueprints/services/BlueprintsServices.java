@@ -77,5 +77,9 @@ public class BlueprintsServices {
     }
     
     
+    public void setBlueprint(Blueprint blp, String author, String bpname)throws BlueprintNotFoundException{
+    	bpp.setBlueprint(blp, author, bpname);
+    }
+    
    
 }

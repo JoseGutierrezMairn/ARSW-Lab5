@@ -125,8 +125,13 @@ Estos fueron los resultados de las pruebas:
 
 	Nota: puede basarse en el formato jSON mostrado en el navegador al consultar una orden con el método GET.
 
+~~~
+Resultados de a ejecución del curl:
+~~~  
+![cmdCurl](https://github.com/JoseGutierrezMairn/ARSW-Lab5/blob/master/img/postCurl.PNG?raw=true)  
 
-3. Teniendo en cuenta el autor y numbre del plano registrado, verifique que el mismo se pueda obtener mediante una petición GET al recurso '/blueprints/{author}/{bpname}' correspondiente.
+3. Teniendo en cuenta el autor y numbre del plano registrado, verifique que el mismo se pueda obtener mediante una petición GET al recurso '/blueprints/{author}/{bpname}' correspondiente.  
+![resultado](https://github.com/JoseGutierrezMairn/ARSW-Lab5/blob/master/img/postResult.PNG?raw=true)  
 
 4. Agregue soporte al verbo PUT para los recursos de la forma '/blueprints/{author}/{bpname}', de manera que sea posible actualizar un plano determinado.
 

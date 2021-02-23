@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -65,8 +66,32 @@ public class BlueprintAPIController {
 	    }        
 	}
     
+	
+	@RequestMapping(method = RequestMethod.POST)	
+	public ResponseEntity<?> manejadorPostRecursoBlueprint(@RequestBody Blueprint bp){
+	    try {
+	    	service.addNewBlueprint(bp);
+	        //registrar dato
+	        return new ResponseEntity<>(HttpStatus.CREATED);
+	    } catch (Exception ex) {
+	        Logger.getLogger(BlueprintAPIController.class.getName()).log(Level.SEVERE, null, ex);
+	        return new ResponseEntity<>(ex.getMessage(),HttpStatus.FORBIDDEN);            
+	    }        
+
+	}
     
-    
+	@RequestMapping(method = RequestMethod.PUT, path="/{author}/{bpname}")	
+	public ResponseEntity<?> putBlueprints(@RequestBody Blueprint bp, @PathVariable String author, @PathVariable String bpname){
+	    try {
+	    	service.setBlueprint(bp, author, bpname);
+	        //registrar dato
+	        return new ResponseEntity<>(HttpStatus.CREATED);
+	    } catch (Exception ex) {
+	        Logger.getLogger(BlueprintAPIController.class.getName()).log(Level.SEVERE, null, ex);
+	        return new ResponseEntity<>(ex.getMessage(),HttpStatus.FORBIDDEN);            
+	    }        
+
+	}
     
 }
 
