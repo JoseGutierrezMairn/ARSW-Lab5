@@ -1,0 +1,9 @@
+Las condiciones de carrera se pueden dar al momento de cambiar o actualizar un plano
+pues pueden existir peticiones de consultar el mismo plano, mientras que al mismo tiempo 
+se quiere actualizar, o de igual manera puede pedirse al mismo la peticion de editar el mismo
+plano por diferentes usuarios, por lo tanto la región critica es en el momento de querer editar 
+el plano es decir en la clase de la implementacion de persistencia en el metodo
+setBlueprint(Blueprint bp, String author, String bpname) al momento que se quiere eliminar el
+plano del hasmap, el cual se puede estar consultando por otros hilos, se podría hacer una bandera
+que indique si el hasmap se puede consultar o editar cosas en el, si la bandera indica que no se
+puede hacer nada en el hasmap los hilos deben esperar a que la bandera cambie.
