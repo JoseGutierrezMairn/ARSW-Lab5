@@ -134,7 +134,14 @@ Resultados de a ejecución del curl:
 ![resultado](https://github.com/JoseGutierrezMairn/ARSW-Lab5/blob/master/img/postResult.PNG?raw=true)  
 
 4. Agregue soporte al verbo PUT para los recursos de la forma '/blueprints/{author}/{bpname}', de manera que sea posible actualizar un plano determinado.
-
+~~~
+En las siguientes imagenes se puede apreciar que se ejecutó el comando curl de manera similar a como se hizo con el POST, solo que esta vez se hace con PUT,  
+donde se envía los nuevos valores para el "plano1" del autor "jose", se muestran también el estado inicial del servicio y el estado final, es decir, antes y  
+después de ejecutar el curl.
+~~~  
+![estadoInicial](https://github.com/JoseGutierrezMairn/ARSW-Lab5/blob/master/img/estadoInicial.PNG?raw=true)  
+![putEnCmd](https://github.com/JoseGutierrezMairn/ARSW-Lab5/blob/master/img/put.PNG?raw=true)  
+![estadoFinal](https://github.com/JoseGutierrezMairn/ARSW-Lab5/blob/master/img/estadoFinal.PNG?raw=true)  
 
 ### Parte III
 
